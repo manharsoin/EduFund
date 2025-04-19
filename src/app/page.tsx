@@ -1,3 +1,5 @@
+// Dashboard showing created campaigns or user status
+
 'use client';
 
 export default function HomePage() {

@@ -1,3 +1,5 @@
+// Page to create a new fundraising campaign
+
 'use client';
 
 import { useState } from 'react';

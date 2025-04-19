@@ -1,3 +1,5 @@
+// Footer component for branding and credits
+
 'use client';
 
 import styled from 'styled-components';

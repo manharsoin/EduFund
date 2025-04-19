@@ -1,3 +1,6 @@
+// Dashboard showing created campaigns or user status
+
+
 'use client';
 
 import React, { useEffect, useState } from 'react';

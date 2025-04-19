@@ -1,3 +1,5 @@
+// Reusable campaign display card used in listings
+
 'use client';
 
 import styled from 'styled-components';
