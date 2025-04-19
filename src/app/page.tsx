@@ -1,95 +1,55 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+export default function HomePage() {
+  const campaigns = [
+    {
+      title: 'Tuition Help for Final Semester',
+      description: 'Need help covering my final semester tuition at Penn State.',
+      target: '2 ETH',
+    },
+    {
+      title: 'Laptop for Data Science Course',
+      description: 'Raising funds to purchase a reliable laptop for coursework.',
+      target: '1.5 ETH',
+    },
+    {
+      title: 'Funding for AI Research Conference',
+      description: 'Need travel and registration support for presenting research.',
+      target: '1 ETH',
+    },
+  ];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-100 py-12 px-6">
+      <div className="max-w-7xl mx-auto text-center mb-12">
+        <h1 className="text-5xl font-extrabold text-blue-700 drop-shadow-sm tracking-tight">
+          🎓 Welcome to EduFund
+        </h1>
+        <p className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+          Support student education through decentralized crowdfunding with full transparency.
+        </p>
+      </div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
+        {campaigns.map((c, i) => (
+          <div
+            key={i}
+            className="group p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 border border-blue-100"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <h3 className="text-2xl font-bold text-gray-800 group-hover:text-blue-700 transition-colors">
+              {c.title}
+            </h3>
+            <p className="mt-2 text-gray-600 text-base leading-relaxed">
+              {c.description}
+            </p>
+            <div className="mt-4 text-right">
+              <span className="inline-block text-sm font-semibold text-blue-600 group-hover:text-purple-600 transition">
+                🎯 Target: <span className="bg-blue-100 px-2 py-1 rounded-md">{c.target}</span>
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
