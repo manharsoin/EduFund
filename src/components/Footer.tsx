@@ -1,4 +1,4 @@
-// Footer component for branding and credits
+//Simple footer component displaying branding and attribution for the EduFund platform.
 
 'use client';
 

@@ -1,3 +1,4 @@
+// Button to connect wallet and show address.
 'use client';
 
 import { useEffect, useState } from 'react';

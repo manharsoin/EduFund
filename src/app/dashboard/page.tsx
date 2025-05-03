@@ -1,3 +1,4 @@
+// Dashboard page displaying and managing campaigns created by the connected wallet user.
 'use client';
 
 import { useEffect, useState } from 'react';

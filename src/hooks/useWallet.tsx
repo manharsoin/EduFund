@@ -1,3 +1,5 @@
+//React hook to manage MetaMask wallet connection and retrieve user's wallet address.
+
 'use client';
 
 import { useEffect, useState } from 'react';

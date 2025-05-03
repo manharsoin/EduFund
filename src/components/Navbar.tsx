@@ -1,3 +1,4 @@
+//Top navigation bar with links to core pages and wallet connection status.
 'use client';
 
 import Link from 'next/link';

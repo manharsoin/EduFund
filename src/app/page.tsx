@@ -1,3 +1,4 @@
+// Homepage showcasing active campaigns and allowing users to donate directly.
 'use client';
 
 import { useEffect, useState } from 'react';

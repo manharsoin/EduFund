@@ -1,3 +1,4 @@
+// Page component for submitting a new fundraising campaign via the EduFund smart contract.
 'use client';
 
 import { useState } from 'react';

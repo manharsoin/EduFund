@@ -1,3 +1,4 @@
+// Custom registry to support server-side rendering of styled-components in a Next.js app.
 'use client';
 
 import React, { useState } from 'react';
