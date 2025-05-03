@@ -1,33 +1,44 @@
-// Navbar component with animated navigation links
-
 'use client';
 
 import Link from 'next/link';
+import { useWallet } from '@/hooks/useWallet';
 
 export default function Navbar() {
+  const { address, connect } = useWallet();
+
   return (
-    <nav className="bg-white border-b border-gray-200 px-6 py-4 shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-3xl font-extrabold text-blue-600 tracking-tight hover:text-blue-800 transition duration-200">
+    <header className="w-full border-b bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link href="/" className="text-2xl font-bold text-blue-700">
           EduFund
         </Link>
 
-        <div className="flex space-x-8">
+        <nav className="flex items-center gap-6">
           {[
-            { href: '/', label: 'Home' },
-            { href: '/create', label: 'Create Campaign' },
-            { href: '/dashboard', label: 'Dashboard' },
-          ].map(({ href, label }) => (
+            { path: '/', label: 'Home' },
+            { path: '/create', label: 'Create Campaign' },
+            { path: '/dashboard', label: 'Dashboard' },
+          ].map((item) => (
             <Link
-              key={href}
-              href={href}
-              className="relative text-gray-700 font-medium hover:text-blue-600 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 before:bg-blue-500 hover:before:w-full before:transition-all before:duration-300"
+              key={item.path}
+              href={item.path}
+              className="relative group text-gray-700 hover:text-blue-600 font-medium text-sm transition-all duration-200"
             >
-              {label}
+              {item.label}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
             </Link>
           ))}
-        </div>
+
+          <button
+            onClick={connect}
+            className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-200 shadow-sm"
+          >
+            {address
+              ? `Connected: ${address.slice(0, 6)}...${address.slice(-4)}`
+              : 'Connect Wallet'}
+          </button>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }

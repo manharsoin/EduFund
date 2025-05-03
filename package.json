@@ -11,10 +11,14 @@
   "dependencies": {
     "@babel/runtime": "^7.27.0",
     "@tailwindcss/postcss": "^4.1.4",
+    "@thirdweb-dev/react": "^4.6.12",
+    "@thirdweb-dev/sdk": "^4.0.73",
+    "ethers": "^5.8.0",
     "framer-motion": "^12.7.3",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
     "styled-components": "^6.1.17"
   },
   "devDependencies": {
